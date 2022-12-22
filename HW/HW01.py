@@ -8,7 +8,7 @@
 day = int(input("Введите число:  "))
 if 0 < day < 6 :
     print("Нет")
-elif day == 6 or day == 7:
+elif  5 < day < 8:
     print("Да")
 else:
     print("Неверное число, введите от 1 до 7")
