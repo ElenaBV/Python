@@ -9,3 +9,25 @@
 # 4*x^5 + 1*x^4 - 3*x^3 - 3 = 0
 # 4*x^2 - 4 = 0
 
+from random import choice, sample
+
+
+def polynomial(num: int):
+    if num < 1:
+        return 0
+
+    poly = ""
+    num_list = range(0, 11) #набор значений
+
+    with open("poly_2.txt", "a", encoding="utf-8") as my_f:
+        for i in range(num, 1, -1): #шагаем до 1 с шагом -1
+            value = choice(num_list)
+            if value:
+                poly += f"{value}*x^{i} {choice('+-')} "
+                
+        numbers = sample(range(1,11),k=2)
+        my_f.write(f"{poly}{choice(numbers)}*x {choice('+-')} {choice(numbers)} = 0\n")
+
+
+for _ in range(3):
+    polynomial(int(input()))

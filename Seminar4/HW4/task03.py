@@ -16,12 +16,39 @@
 # модуль collections
 
 
+# from random import randrange
 
-my_list =list(map(int, input("Введите числа: ").split()))
-print(my_list)
-new_list = []
-for item in my_list:
-    if item not in new_list:
-        new_list.append(item)
-print(new_list)
 
+# def list_rand_nums(count:int):
+#     if count <0:
+#         print("Negative value of the number of numbers")
+#         return []
+
+#     list_nums = []
+#     for i in range(count):
+#         list_nums.append(randrange(count))
+
+#     return list_nums
+
+# def uniq_el(list_nums: list):
+#     result = []
+#     my_dict = {}.fromkeys(list_nums,0) #ключами словаря могут быть только уникальные значения, поэтому повторяющиеся значения уйдут
+
+#     for i in list_nums:
+#         my_dict[i]+=1 # увеличит счетчик, если есть повтор 
+#     for k in my_dict:
+#         if my_dict[k] == 1:
+#             result.append(k)
+#     return result
+
+# all_list = list_rand_nums(int(input("Nmber ")))
+# print(all_list)
+# print (uniq_el(all_list))
+
+from collections import Counter
+
+my_list = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
+counter = Counter(my_list)
+
+single = [x for x, n in counter.items() if n == 1]
+print(single)

@@ -13,10 +13,18 @@
 # decimal python  - посомтреть модуль и через него искать само решение 
 
 
-from decimal import Decimal
+# from decimal import Decimal
  
-number = Decimal(input("Input number"))
-number = number.quantize(Decimal(input("Enter the required accuracy")))
-print(number)
+# def accuracy(num, acc):
+#     number = Decimal(f"{num}")
+#     return number.quantize(Decimal(f"{acc}"))
+
+# print(accuracy(float(input ("Input number ")),
+#                float(input("Enter the required accuracy"))))
 
 
+
+num = float(input("Enter a number  "))
+
+_, accu = input("Enter the accuracy  ").split(".") #_, безымянная переменная отбрпсвает то, что до сплита 
+print(f"{num:.{len(accu)}f}") # способ форматирования строки для округления до количества после запятой
