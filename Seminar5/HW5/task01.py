@@ -9,16 +9,17 @@ import random
 
 
 
-def make_list():
-    num = int(input("Input number of words "))
-    word = input("Input letter :\n")
+def make_list(num:int , word:str):
     my_list = []
     for i in range(num):
-        text = random.sample(word, 3)
+        text = random.sample(word, k=3)
         my_list.append("".join(text))
     print(my_list)
     return my_list
 
+# def make_list(num:int,word:str):
+#   return " ".join("".join(sample(word,3))for _ in range(num))
+# запись с помощью comprehencion для увеличения скорости работы 
 def search_letter (my_list):
     find_txt = input("Input 3 Letters  ")
     new_list = []
