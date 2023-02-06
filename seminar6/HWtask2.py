@@ -9,3 +9,16 @@
 # [20, 21, 40, 42, 60, 63, 80, 84, 100, 105, 120, 126, 140, 147, 
 #  160, 168, 180, 189, 200, 210, 220, 231, 240, 252, 260, 273, 280,
 #  294, 300, 315, 320, 336, 340, 357, 360, 378, 380, 399, 400, 420]
+
+
+
+
+def make_list():
+    num = int(input("Input number "))
+    make_list = [i for i in range (20, num + 1) if i % 20 == 0 or i % 21 == 0 ]
+    # for i in range (20, num + 1):
+    #     if i % 20 == 0 or i % 21 == 0:
+    #         make_list.append(i)
+    print(make_list)
+    return make_list
+make_list()
